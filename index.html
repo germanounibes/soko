@@ -3,198 +3,3379 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="SOKO Energy — capas inteligentes para levar energia e proteção com você." />
-  <title>SOKO Energy — Capas que acompanham seu ritmo</title>
+  <meta name="description" content="SOKO Energy — capas inteligentes para proteção e energia." />
+  <title>SOKO Energy — Proteção e energia no seu ritmo</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --bg:#f7f7f4; --paper:#fff; --ink:#15131b; --muted:#6c6873; --line:#dfdde4;
-      --purple:#8c4dff; --purple-2:#b58cff; --purple-soft:#eee6ff; --black:#111015;
-      --green:#4f8f76; --shadow:0 20px 60px rgba(25,18,40,.10); --radius:24px;
+      --bg:#f7f7f4;
+      --paper:#fff;
+      --ink:#15131b;
+      --muted:#6c6873;
+      --line:#dfdde4;
+      --purple:#8c4dff;
+      --purple-2:#b58cff;
+      --purple-soft:#eee6ff;
+      --black:#111015;
+      --green:#4f8f76;
+      --shadow:0 20px 60px rgba(25,18,40,.10);
+      --radius:24px;
     }
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif}
-    a{color:inherit;text-decoration:none} button{font:inherit;border:0;cursor:pointer}
-    .topbar{background:#15131b;color:#fff;text-align:center;padding:10px 16px;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
-    header{position:sticky;top:0;z-index:30;background:rgba(247,247,244,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(20,18,25,.08)}
-    .nav{max-width:1240px;margin:auto;height:76px;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .brand{display:flex;align-items:center;gap:12px;font-family:Manrope,sans-serif;font-weight:800;letter-spacing:.11em}
-    .brand-mark{width:34px;height:34px;border-radius:11px;background:radial-gradient(circle at 35% 30%,#d4baff 0 8%,transparent 9%),linear-gradient(150deg,#7d3df0,#aa74ff);display:grid;place-items:center;color:#fff;font-size:15px;box-shadow:0 8px 22px rgba(140,77,255,.24)}
-    .brand small{display:block;font-size:8px;letter-spacing:.35em;color:#766d82;margin-top:-3px}
-    nav{display:flex;gap:30px;font-size:14px;font-weight:600;color:#56515e} nav a:hover{color:var(--ink)}
-    .nav-actions{display:flex;align-items:center;gap:10px}.icon-btn{width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:#fff;display:grid;place-items:center;color:#2c2831;position:relative}
-    .cart-count{position:absolute;right:-2px;top:-2px;width:17px;height:17px;border-radius:50%;background:var(--purple);color:#fff;font-size:10px;display:grid;place-items:center;font-weight:700}
-    .container{max-width:1240px;margin:auto;padding:0 24px}
-    .hero{padding:54px 0 28px}.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:30px;align-items:stretch}
-    .hero-copy{background:#fff;border:1px solid var(--line);border-radius:30px;padding:64px 64px 58px;min-height:620px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
-    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:#5f5967;text-transform:uppercase;letter-spacing:.13em;font-size:11px;font-weight:700}
-    .eyebrow .dot{width:8px;height:8px;background:var(--purple);border-radius:50%}.hero h1{font:800 clamp(44px,6vw,78px)/.96 Manrope,sans-serif;letter-spacing:-.06em;margin:18px 0 20px;max-width:650px}
-    .hero h1 span{display:block;color:#8b7f96}.hero p{font-size:17px;line-height:1.65;color:var(--muted);max-width:560px;margin:0 0 28px}
-    .cta-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.btn{padding:15px 22px;border-radius:14px;font-weight:700;font-size:14px;display:inline-flex;gap:9px;align-items:center;justify-content:center}.btn-primary{background:var(--ink);color:#fff;box-shadow:0 12px 28px rgba(21,19,27,.16)}.btn-secondary{background:#fff;border:1px solid var(--line)}
-    .hero-meta{display:flex;gap:26px;margin-top:44px;flex-wrap:wrap}.hero-meta div{font-size:12px;color:#6e6874}.hero-meta strong{display:block;font-size:14px;color:var(--ink);margin-bottom:4px}
-    .hero-visual{background:#18151f;border-radius:30px;min-height:620px;overflow:hidden;position:relative;border:1px solid #26212f;box-shadow:var(--shadow)}
-    .hero-visual img{width:100%;height:100%;object-fit:cover;object-position:50% 47%;display:block;filter:saturate(1.02)}
-    .hero-tag{position:absolute;left:22px;top:22px;background:rgba(255,255,255,.92);border-radius:999px;padding:9px 13px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.hero-tag b{color:var(--purple)}
-    .floating{position:absolute;right:20px;bottom:20px;max-width:240px;background:rgba(18,16,23,.86);color:#fff;border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(12px);padding:16px 18px;border-radius:18px}.floating strong{font-size:15px}.floating p{font-size:12px;color:#bbb4c5;margin:6px 0 0;line-height:1.45}
-    .trust{padding:24px 0 10px}.trust-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.trust-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px 18px;display:flex;gap:12px;align-items:center}.trust-icon{width:36px;height:36px;border-radius:12px;background:var(--purple-soft);display:grid;place-items:center;color:#6d34d7;font-weight:800}.trust-card strong{font-size:13px}.trust-card span{display:block;color:#7a7481;font-size:11px;margin-top:3px}
-    section{padding:88px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px}.section-kicker{color:#7c7186;letter-spacing:.12em;text-transform:uppercase;font-size:11px;font-weight:800}.section-head h2{font:800 clamp(32px,4vw,54px)/1 Manrope,sans-serif;letter-spacing:-.05em;margin:8px 0 0}.section-head p{max-width:460px;color:var(--muted);line-height:1.6;margin:0}
-    .products{display:grid;grid-template-columns:1.12fr .88fr .88fr;gap:16px}.product-card{background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;position:relative;transition:.25s transform,.25s box-shadow}.product-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.product-card.featured{grid-row:span 2}.product-image{height:310px;background:#ededed;overflow:hidden}.featured .product-image{height:440px}.product-image img{width:100%;height:100%;object-fit:cover;display:block}.product-info{padding:22px}.product-top{display:flex;justify-content:space-between;gap:16px}.product-info h3{margin:0;font:800 22px Manrope,sans-serif;letter-spacing:-.04em}.badge{background:#f2ecff;color:#7032db;border-radius:999px;padding:7px 9px;font-size:10px;font-weight:800;height:max-content;white-space:nowrap}.product-info p{color:#716b77;line-height:1.55;font-size:13px;margin:10px 0 16px}.price{font-weight:800;font-size:20px}.old{font-size:12px;color:#938d97;text-decoration:line-through;margin-left:6px}.product-actions{display:flex;gap:9px;margin-top:16px}.product-actions .btn{flex:1;padding:12px 14px;border-radius:12px;font-size:12px}.mini-select{border:1px solid var(--line);border-radius:12px;background:#fff;padding:11px 12px;font-size:12px}
-    .story{background:#111015;color:#fff}.story-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:24px;align-items:center}.story-copy{padding-right:28px}.story .section-kicker{color:#a98ad9}.story h2{font:800 clamp(38px,5vw,66px)/.98 Manrope,sans-serif;letter-spacing:-.055em;margin:10px 0 18px}.story p{color:#a9a4af;line-height:1.7;max-width:480px}.story-feature{border:1px solid #312b38;border-radius:28px;background:linear-gradient(135deg,#1c1822,#0f0d13);padding:18px;min-height:450px;display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:center;overflow:hidden}.story-feature img{width:100%;height:410px;object-fit:cover;border-radius:20px}.story-stats{display:grid;gap:12px}.stat{border:1px solid #332e38;background:#17141b;border-radius:18px;padding:18px}.stat b{font:800 29px Manrope,sans-serif;display:block}.stat span{color:#a9a4af;font-size:12px;line-height:1.45}
-    .solar{background:#ece8f2}.solar-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.feature-card{border:1px solid #d9d4df;background:#f9f8fb;border-radius:26px;overflow:hidden;min-height:520px;position:relative}.feature-media{height:340px;background:#dedde0;overflow:hidden}.feature-media img{width:100%;height:100%;object-fit:cover}.feature-body{padding:26px}.feature-body h3{font:800 28px Manrope,sans-serif;letter-spacing:-.04em;margin:0 0 10px}.feature-body p{margin:0;color:#6e6874;line-height:1.6;font-size:13px}.pill-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.pill{padding:9px 11px;border-radius:999px;background:#fff;border:1px solid #ddd8e3;font-size:11px;font-weight:700}
-    .how{background:#fff}.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.how-card{background:#f8f7f9;border:1px solid var(--line);border-radius:22px;padding:26px;min-height:220px}.num{font:800 42px Manrope,sans-serif;color:#c9c3cd}.how-card h3{font:800 21px Manrope,sans-serif;letter-spacing:-.03em;margin:22px 0 9px}.how-card p{color:#6f6a75;font-size:13px;line-height:1.6;margin:0}
-    .compare{background:#f4f3ef}.compare-wrap{overflow:auto;border:1px solid var(--line);border-radius:24px;background:#fff}.compare table{width:100%;border-collapse:collapse;min-width:760px}.compare th,.compare td{padding:18px 20px;border-bottom:1px solid #e8e5ea;text-align:left;font-size:13px}.compare th{font-family:Manrope,sans-serif;font-size:14px}.compare tr:last-child td{border-bottom:0}.check{font-weight:800;color:#6d34d7}.muted-cell{color:#9b96a1}
-    .reviews{background:#fff}.review-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}.review-main{border:1px solid var(--line);border-radius:26px;padding:30px;background:#f8f7fa}.stars{letter-spacing:.1em;color:#7c3de9}.quote{font:700 29px/1.25 Manrope,sans-serif;letter-spacing:-.035em;max-width:640px;margin:16px 0 24px}.reviewer{display:flex;align-items:center;gap:12px}.avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(145deg,#d7c5ff,#8c4dff);display:grid;place-items:center;color:#fff;font-weight:800}.reviewer small{color:#7a7480}.review-stack{display:grid;gap:14px}.mini-review{border:1px solid var(--line);border-radius:20px;padding:20px}.mini-review p{color:#67626e;font-size:13px;line-height:1.55;margin:9px 0}.mini-review strong{font-size:13px}
-    footer{background:#111015;color:#fff;padding:70px 0 26px}.footer-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr .8fr;gap:28px;border-bottom:1px solid #29252e;padding-bottom:48px}.footer-brand{font-family:Manrope,sans-serif;font-weight:800;font-size:18px;letter-spacing:.13em}.footer-copy{color:#a9a4af;line-height:1.6;font-size:13px;max-width:360px}.footer-col h4{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#aaa4b0}.footer-col a{display:block;color:#d0cbd3;font-size:13px;margin:12px 0}.copyright{display:flex;justify-content:space-between;gap:16px;padding-top:22px;color:#837d89;font-size:11px}
-    .cart-drawer{position:fixed;right:0;top:0;bottom:0;width:min(430px,100vw);background:#fff;z-index:60;box-shadow:-20px 0 60px rgba(0,0,0,.18);transform:translateX(105%);transition:.3s ease;display:flex;flex-direction:column}.cart-drawer.open{transform:none}.drawer-head{padding:24px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}.drawer-head h3{margin:0;font:800 24px Manrope,sans-serif}.drawer-body{padding:20px;overflow:auto;flex:1}.cart-item{display:grid;grid-template-columns:82px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid #eee}.cart-item img{width:82px;height:82px;object-fit:cover;border-radius:14px;background:#eee}.cart-item strong{font-size:13px}.cart-item span{display:block;color:#7c7682;font-size:12px;margin-top:5px}.qty{display:flex;align-items:center;gap:9px;margin-top:10px}.qty button{width:24px;height:24px;border-radius:7px;border:1px solid var(--line);background:#fff}.drawer-footer{padding:20px;border-top:1px solid var(--line)}.total-row{display:flex;justify-content:space-between;font-weight:800;margin-bottom:14px}.overlay{position:fixed;inset:0;background:rgba(11,9,13,.44);z-index:50;opacity:0;pointer-events:none;transition:.25s}.overlay.show{opacity:1;pointer-events:auto}
-    .toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,30px);background:#17131c;color:#fff;padding:13px 17px;border-radius:12px;font-size:13px;opacity:0;pointer-events:none;transition:.25s;z-index:90}.toast.show{opacity:1;transform:translate(-50%,0)}
-    .mobile-menu{display:none}
-    @media(max-width:980px){nav{display:none}.mobile-menu{display:grid}.hero-grid,.story-grid,.solar-grid,.review-grid{grid-template-columns:1fr}.hero-copy{min-height:auto;padding:46px 34px}.hero-visual{min-height:510px}.products{grid-template-columns:1fr 1fr}.product-card.featured{grid-row:auto}.featured .product-image{height:360px}.trust-row{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1.4fr 1fr 1fr}.story-copy{padding-right:0}.story-feature{grid-template-columns:1fr}.story-feature img{height:310px}.section-head{align-items:start;flex-direction:column}}
-    @media(max-width:640px){.topbar{font-size:10px}.nav{height:68px;padding:0 16px}.nav-actions .icon-btn:nth-child(1){display:none}.container{padding:0 16px}.hero{padding-top:26px}.hero-copy{padding:34px 24px;border-radius:24px}.hero h1{font-size:46px}.hero p{font-size:15px}.hero-visual{min-height:400px;border-radius:24px}.hero-visual img{object-position:50% 42%}.hero-meta{margin-top:30px;gap:18px}.trust-row,.products,.how-grid{grid-template-columns:1fr}.product-card,.featured .product-image,.product-image{height:auto}.product-image{height:320px!important}.section-head h2{font-size:37px}.section{padding:66px 0}.story-feature{padding:12px}.story .story-feature img{height:280px}.compare table{min-width:700px}.footer-grid{grid-template-columns:1fr 1fr}.copyright{flex-direction:column}.floating{max-width:205px}.brand{font-size:13px}}
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:'DM Sans',sans-serif;
+    }
+
+    a{color:inherit;text-decoration:none}
+    button,select{font:inherit;border:0;cursor:pointer}
+
+    .topbar{
+      background:#15131b;
+      color:#fff;
+      text-align:center;
+      padding:10px 16px;
+      font-size:12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:30;
+      background:rgba(247,247,244,.88);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(20,18,25,.08);
+    }
+
+    .nav{
+      max-width:1240px;
+      margin:auto;
+      height:76px;
+      padding:0 24px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-family:Manrope,sans-serif;
+      font-weight:800;
+      letter-spacing:.11em;
+    }
+
+    .brand-mark{
+      width:34px;
+      height:34px;
+      border-radius:11px;
+      background:
+        radial-gradient(circle at 35% 30%,#d4baff 0 8%,transparent 9%),
+        linear-gradient(150deg,#7d3df0,#aa74ff);
+      display:grid;
+      place-items:center;
+      color:#fff;
+      font-size:15px;
+      box-shadow:0 8px 22px rgba(140,77,255,.24);
+    }
+
+    .brand small{
+      display:block;
+      font-size:8px;
+      letter-spacing:.35em;
+      color:#766d82;
+      margin-top:-3px;
+    }
+
+    nav{
+      display:flex;
+      gap:30px;
+      font-size:14px;
+      font-weight:600;
+      color:#56515e;
+    }
+
+    nav a:hover{color:var(--ink)}
+
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .icon-btn{
+      width:42px;
+      height:42px;
+      border:1px solid var(--line);
+      border-radius:50%;
+      background:#fff;
+      display:grid;
+      place-items:center;
+      color:#2c2831;
+      position:relative;
+    }
+
+    .cart-count{
+      position:absolute;
+      right:-2px;
+      top:-2px;
+      width:17px;
+      height:17px;
+      border-radius:50%;
+      background:var(--purple);
+      color:#fff;
+      font-size:10px;
+      display:grid;
+      place-items:center;
+      font-weight:700;
+    }
+
+    .container{
+      max-width:1240px;
+      margin:auto;
+      padding:0 24px;
+    }
+
+    .hero{
+      padding:54px 0 28px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:30px;
+      align-items:stretch;
+    }
+
+    .hero-copy{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:64px 64px 58px;
+      min-height:620px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      color:#5f5967;
+      text-transform:uppercase;
+      letter-spacing:.13em;
+      font-size:11px;
+      font-weight:700;
+    }
+
+    .eyebrow .dot{
+      width:8px;
+      height:8px;
+      background:var(--purple);
+      border-radius:50%;
+    }
+
+    .hero h1{
+      font:800 clamp(44px,6vw,78px)/.96 Manrope,sans-serif;
+      letter-spacing:-.06em;
+      margin:18px 0 20px;
+      max-width:650px;
+    }
+
+    .hero h1 span{
+      display:block;
+      color:#8b7f96;
+    }
+
+    .hero p{
+      font-size:17px;
+      line-height:1.65;
+      color:var(--muted);
+      max-width:560px;
+      margin:0 0 28px;
+    }
+
+    .cta-row{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:15px 22px;
+      border-radius:14px;
+      font-weight:700;
+      font-size:14px;
+      display:inline-flex;
+      gap:9px;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .btn-primary{
+      background:var(--ink);
+      color:#fff;
+      box-shadow:0 12px 28px rgba(21,19,27,.16);
+    }
+
+    .btn-secondary{
+      background:#fff;
+      border:1px solid var(--line);
+    }
+
+    .hero-meta{
+      display:flex;
+      gap:26px;
+      margin-top:44px;
+      flex-wrap:wrap;
+    }
+
+    .hero-meta div{
+      font-size:12px;
+      color:#6e6874;
+    }
+
+    .hero-meta strong{
+      display:block;
+      font-size:14px;
+      color:var(--ink);
+      margin-bottom:4px;
+    }
+
+    .hero-visual{
+      background:#18151f;
+      border-radius:30px;
+      min-height:620px;
+      overflow:hidden;
+      position:relative;
+      border:1px solid #26212f;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-visual img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:50% 47%;
+      display:block;
+      filter:saturate(1.02);
+    }
+
+    .hero-tag{
+      position:absolute;
+      left:22px;
+      top:22px;
+      background:rgba(255,255,255,.92);
+      border-radius:999px;
+      padding:9px 13px;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      z-index:2;
+    }
+
+    .hero-tag b{color:var(--purple)}
+
+    .floating{
+      position:absolute;
+      right:20px;
+      bottom:20px;
+      max-width:240px;
+      background:rgba(18,16,23,.86);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.16);
+      backdrop-filter:blur(12px);
+      padding:16px 18px;
+      border-radius:18px;
+    }
+
+    .floating strong{font-size:15px}
+
+    .floating p{
+      font-size:12px;
+      color:#bbb4c5;
+      margin:6px 0 0;
+      line-height:1.45;
+    }
+
+    .trust{
+      padding:24px 0 10px;
+    }
+
+    .trust-row{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+    }
+
+    .trust-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px 18px;
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+
+    .trust-icon{
+      width:36px;
+      height:36px;
+      border-radius:12px;
+      background:var(--purple-soft);
+      display:grid;
+      place-items:center;
+      color:#6d34d7;
+      font-weight:800;
+    }
+
+    .trust-card strong{font-size:13px}
+
+    .trust-card span{
+      display:block;
+      color:#7a7481;
+      font-size:11px;
+      margin-top:3px;
+    }
+
+    section{padding:88px 0}
+
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:24px;
+      margin-bottom:28px;
+    }
+
+    .section-kicker{
+      color:#7c7186;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-size:11px;
+      font-weight:800;
+    }
+
+    .section-head h2{
+      font:800 clamp(32px,4vw,54px)/1 Manrope,sans-serif;
+      letter-spacing:-.05em;
+      margin:8px 0 0;
+    }
+
+    .section-head p{
+      max-width:460px;
+      color:var(--muted);
+      line-height:1.6;
+      margin:0;
+    }
+
+    .products{
+      display:grid;
+      grid-template-columns:1.12fr .88fr;
+      gap:16px;
+    }
+
+    .product-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      overflow:hidden;
+      position:relative;
+      transition:.25s transform,.25s box-shadow;
+    }
+
+    .product-card:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--shadow);
+    }
+
+    .product-card.featured{
+      grid-row:span 2;
+    }
+
+    .product-image{
+      height:310px;
+      background:#ededed;
+      overflow:hidden;
+    }
+
+    .featured .product-image{
+      height:440px;
+    }
+
+    .product-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .product-info{padding:22px}
+
+    .product-top{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+    }
+
+    .product-info h3{
+      margin:0;
+      font:800 22px Manrope,sans-serif;
+      letter-spacing:-.04em;
+    }
+
+    .badge{
+      background:#f2ecff;
+      color:#7032db;
+      border-radius:999px;
+      padding:7px 9px;
+      font-size:10px;
+      font-weight:800;
+      height:max-content;
+      white-space:nowrap;
+    }
+
+    .product-info p{
+      color:#716b77;
+      line-height:1.55;
+      font-size:13px;
+      margin:10px 0 16px;
+    }
+
+    .price{
+      font-weight:800;
+      font-size:20px;
+    }
+
+    .old{
+      font-size:12px;
+      color:#938d97;
+      text-decoration:line-through;
+      margin-left:6px;
+    }
+
+    .product-actions{
+      display:flex;
+      gap:9px;
+      margin-top:16px;
+    }
+
+    .product-actions .btn{
+      flex:1;
+      padding:12px 14px;
+      border-radius:12px;
+      font-size:12px;
+    }
+
+    .mini-select{
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#fff;
+      padding:11px 12px;
+      font-size:12px;
+    }
+
+    .combo-section{
+      background:#f0ebf8;
+    }
+
+    .combo-card{
+      background:#111015;
+      color:#fff;
+      border-radius:30px;
+      padding:42px;
+      display:grid;
+      grid-template-columns:1fr .8fr;
+      gap:30px;
+      align-items:center;
+      overflow:hidden;
+    }
+
+    .combo-kicker{
+      color:#b58cff;
+      font-size:11px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.13em;
+    }
+
+    .combo-card h2{
+      font:800 clamp(35px,5vw,62px)/.98 Manrope,sans-serif;
+      letter-spacing:-.055em;
+      margin:10px 0 18px;
+    }
+
+    .combo-card p{
+      color:#aaa4af;
+      line-height:1.65;
+      max-width:540px;
+      font-size:14px;
+    }
+
+    .combo-products{
+      display:flex;
+      gap:12px;
+      margin:25px 0;
+      flex-wrap:wrap;
+    }
+
+    .combo-chip{
+      border:1px solid #38323f;
+      background:#1a171f;
+      padding:12px 15px;
+      border-radius:14px;
+      font-size:13px;
+    }
+
+    .combo-chip strong{
+      display:block;
+      color:#fff;
+    }
+
+    .combo-chip span{
+      color:#9d96a5;
+      font-size:11px;
+    }
+
+    .combo-price-box{
+      background:#1b1820;
+      border:1px solid #39333f;
+      border-radius:24px;
+      padding:26px;
+    }
+
+    .combo-old{
+      color:#908a96;
+      text-decoration:line-through;
+      font-size:14px;
+    }
+
+    .combo-price{
+      font:800 38px Manrope,sans-serif;
+      margin:4px 0;
+    }
+
+    .combo-pix{
+      color:#b58cff;
+      font-weight:800;
+      font-size:14px;
+    }
+
+    .combo-save{
+      display:inline-block;
+      margin-top:12px;
+      background:#2c213d;
+      color:#c9aaff;
+      padding:7px 10px;
+      border-radius:999px;
+      font-size:11px;
+      font-weight:800;
+    }
+
+    .story{
+      background:#111015;
+      color:#fff;
+    }
+
+    .story-grid{
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:24px;
+      align-items:center;
+    }
+
+    .story-copy{padding-right:28px}
+
+    .story .section-kicker{color:#a98ad9}
+
+    .story h2{
+      font:800 clamp(38px,5vw,66px)/.98 Manrope,sans-serif;
+      letter-spacing:-.055em;
+      margin:10px 0 18px;
+    }
+
+    .story p{
+      color:#a9a4af;
+      line-height:1.7;
+      max-width:480px;
+    }
+
+    .story-feature{
+      border:1px solid #312b38;
+      border-radius:28px;
+      background:linear-gradient(135deg,#1c1822,#0f0d13);
+      padding:18px;
+      min-height:450px;
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:18px;
+      align-items:center;
+      overflow:hidden;
+    }
+
+    .story-feature img{
+      width:100%;
+      height:410px;
+      object-fit:cover;
+      border-radius:20px;
+    }
+
+    .story-stats{
+      display:grid;
+      gap:12px;
+    }
+
+    .stat{
+      border:1px solid #332e38;
+      background:#17141b;
+      border-radius:18px;
+      padding:18px;
+    }
+
+    .stat b{
+      font:800 29px Manrope,sans-serif;
+      display:block;
+    }
+
+    .stat span{
+      color:#a9a4af;
+      font-size:12px;
+      line-height:1.45;
+    }
+
+    .charge{
+      background:#ece8f2;
+    }
+
+    .charge-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    .feature-card{
+      border:1px solid #d9d4df;
+      background:#f9f8fb;
+      border-radius:26px;
+      overflow:hidden;
+      min-height:520px;
+      position:relative;
+    }
+
+    .feature-media{
+      height:340px;
+      background:#dedde0;
+      overflow:hidden;
+    }
+
+    .feature-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .feature-body{padding:26px}
+
+    .feature-body h3{
+      font:800 28px Manrope,sans-serif;
+      letter-spacing:-.04em;
+      margin:0 0 10px;
+    }
+
+    .feature-body p{
+      margin:0;
+      color:#6e6874;
+      line-height:1.6;
+      font-size:13px;
+    }
+
+    .pill-row{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    .pill{
+      padding:9px 11px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid #ddd8e3;
+      font-size:11px;
+      font-weight:700;
+    }
+
+    .how{
+      background:#fff;
+    }
+
+    .how-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+
+    .how-card{
+      background:#f8f7f9;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:26px;
+      min-height:220px;
+    }
+
+    .num{
+      font:800 42px Manrope,sans-serif;
+      color:#c9c3cd;
+    }
+
+    .how-card h3{
+      font:800 21px Manrope,sans-serif;
+      letter-spacing:-.03em;
+      margin:22px 0 9px;
+    }
+
+    .how-card p{
+      color:#6f6a75;
+      font-size:13px;
+      line-height:1.6;
+      margin:0;
+    }
+
+    .shipping{
+      background:#f4f3ef;
+    }
+
+    .shipping-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+
+    .shipping-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:24px;
+    }
+
+    .shipping-icon{
+      width:42px;
+      height:42px;
+      border-radius:13px;
+      background:var(--purple-soft);
+      display:grid;
+      place-items:center;
+      color:#7032db;
+      font-weight:800;
+      margin-bottom:18px;
+    }
+
+    .shipping-card h3{
+      font:800 19px Manrope,sans-serif;
+      margin:0 0 8px;
+    }
+
+    .shipping-card p{
+      margin:0;
+      color:#706a76;
+      line-height:1.55;
+      font-size:13px;
+    }
+
+    .shipping-price{
+      font:800 22px Manrope,sans-serif;
+      margin-top:16px;
+    }
+
+    .shipping-free{
+      color:var(--green);
+      font-weight:800;
+      font-size:13px;
+      margin-top:16px;
+    }
+
+    .compare{
+      background:#f4f3ef;
+    }
+
+    .compare-wrap{
+      overflow:auto;
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:#fff;
+    }
+
+    .compare table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:650px;
+    }
+
+    .compare th,.compare td{
+      padding:18px 20px;
+      border-bottom:1px solid #e8e5ea;
+      text-align:left;
+      font-size:13px;
+    }
+
+    .compare th{
+      font-family:Manrope,sans-serif;
+      font-size:14px;
+    }
+
+    .compare tr:last-child td{border-bottom:0}
+
+    .check{
+      font-weight:800;
+      color:#6d34d7;
+    }
+
+    .muted-cell{color:#9b96a1}
+
+    .reviews{
+      background:#fff;
+    }
+
+    .review-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:18px;
+    }
+
+    .review-main{
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:30px;
+      background:#f8f7fa;
+    }
+
+    .stars{
+      letter-spacing:.1em;
+      color:#7c3de9;
+    }
+
+    .quote{
+      font:700 29px/1.25 Manrope,sans-serif;
+      letter-spacing:-.035em;
+      max-width:640px;
+      margin:16px 0 24px;
+    }
+
+    .reviewer{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .avatar{
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      background:linear-gradient(145deg,#d7c5ff,#8c4dff);
+      display:grid;
+      place-items:center;
+      color:#fff;
+      font-weight:800;
+    }
+
+    .reviewer small{
+      color:#7a7480;
+      display:block;
+      margin-top:3px;
+    }
+
+    .review-stack{
+      display:grid;
+      gap:14px;
+    }
+
+    .mini-review{
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:20px;
+    }
+
+    .mini-review p{
+      color:#67626e;
+      font-size:13px;
+      line-height:1.55;
+      margin:9px 0;
+    }
+
+    .mini-review strong{font-size:13px}
+
+    footer{
+      background:#111015;
+      color:#fff;
+      padding:70px 0 26px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr .8fr .8fr;
+      gap:28px;
+      border-bottom:1px solid #29252e;
+      padding-bottom:48px;
+    }
+
+    .footer-brand{
+      font-family:Manrope,sans-serif;
+      font-weight:800;
+      font-size:18px;
+      letter-spacing:.13em;
+    }
+
+    .footer-copy{
+      color:#a9a4af;
+      line-height:1.6;
+      font-size:13px;
+      max-width:360px;
+    }
+
+    .footer-col h4{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:#aaa4b0;
+    }
+
+    .footer-col a{
+      display:block;
+      color:#d0cbd3;
+      font-size:13px;
+      margin:12px 0;
+    }
+
+    .copyright{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      padding-top:22px;
+      color:#837d89;
+      font-size:11px;
+    }
+
+    .cart-drawer{
+      position:fixed;
+      right:0;
+      top:0;
+      bottom:0;
+      width:min(460px,100vw);
+      background:#fff;
+      z-index:60;
+      box-shadow:-20px 0 60px rgba(0,0,0,.18);
+      transform:translateX(105%);
+      transition:.3s ease;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .cart-drawer.open{transform:none}
+
+    .drawer-head{
+      padding:24px;
+      border-bottom:1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .drawer-head h3{
+      margin:0;
+      font:800 24px Manrope,sans-serif;
+    }
+
+    .drawer-body{
+      padding:20px;
+      overflow:auto;
+      flex:1;
+    }
+
+    .cart-item{
+      display:grid;
+      grid-template-columns:72px 1fr auto;
+      gap:12px;
+      align-items:center;
+      padding:12px 0;
+      border-bottom:1px solid #eee;
+    }
+
+    .cart-item img{
+      width:72px;
+      height:72px;
+      object-fit:cover;
+      border-radius:14px;
+      background:#eee;
+    }
+
+    .cart-item strong{font-size:13px}
+
+    .cart-item span{
+      display:block;
+      color:#7c7682;
+      font-size:12px;
+      margin-top:5px;
+    }
+
+    .qty{
+      display:flex;
+      align-items:center;
+      gap:9px;
+      margin-top:10px;
+    }
+
+    .qty button{
+      width:24px;
+      height:24px;
+      border-radius:7px;
+      border:1px solid var(--line);
+      background:#fff;
+    }
+
+    .drawer-footer{
+      padding:20px;
+      border-top:1px solid var(--line);
+    }
+
+    .subtotal-row,
+    .discount-row,
+    .total-row{
+      display:flex;
+      justify-content:space-between;
+      margin-bottom:10px;
+      font-size:13px;
+    }
+
+    .discount-row{
+      color:var(--green);
+      font-weight:700;
+    }
+
+    .total-row{
+      font-weight:800;
+      font-size:18px;
+      margin-top:14px;
+      padding-top:14px;
+      border-top:1px solid var(--line);
+    }
+
+    .pix-note{
+      background:#f5f0ff;
+      color:#6630c9;
+      padding:11px 13px;
+      border-radius:12px;
+      font-size:11px;
+      line-height:1.45;
+      margin:14px 0;
+    }
+
+    .checkout-panel{
+      display:none;
+      position:fixed;
+      inset:0;
+      z-index:80;
+      background:rgba(11,9,13,.55);
+      padding:20px;
+      overflow:auto;
+    }
+
+    .checkout-panel.show{
+      display:block;
+    }
+
+    .checkout-box{
+      max-width:680px;
+      margin:30px auto;
+      background:#fff;
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:0 30px 80px rgba(0,0,0,.25);
+    }
+
+    .checkout-head{
+      background:#111015;
+      color:#fff;
+      padding:28px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .checkout-head h2{
+      margin:0;
+      font:800 27px Manrope,sans-serif;
+    }
+
+    .checkout-content{
+      padding:28px;
+    }
+
+    .checkout-section{
+      margin-bottom:26px;
+    }
+
+    .checkout-section h3{
+      font:800 17px Manrope,sans-serif;
+      margin:0 0 13px;
+    }
+
+    .payment-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:9px;
+    }
+
+    .payment-option{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px 10px;
+      text-align:center;
+      background:#fff;
+      font-size:12px;
+      font-weight:700;
+      transition:.2s;
+    }
+
+    .payment-option.active{
+      border-color:var(--purple);
+      background:var(--purple-soft);
+      color:#6430bd;
+    }
+
+    .payment-option span{
+      display:block;
+      color:#7a7481;
+      font-size:10px;
+      margin-top:4px;
+      font-weight:500;
+    }
+
+    .shipping-option{
+      border:1px solid var(--line);
+      border-radius:15px;
+      padding:14px;
+      margin-bottom:9px;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:center;
+      cursor:pointer;
+    }
+
+    .shipping-option.active{
+      border-color:var(--purple);
+      background:#faf7ff;
+    }
+
+    .shipping-option strong{
+      font-size:13px;
+    }
+
+    .shipping-option small{
+      display:block;
+      color:#77717d;
+      margin-top:3px;
+    }
+
+    .shipping-option b{
+      white-space:nowrap;
+      font-size:13px;
+    }
+
+    .checkout-total{
+      background:#f7f6f8;
+      border-radius:18px;
+      padding:18px;
+      margin-bottom:18px;
+    }
+
+    .checkout-total div{
+      display:flex;
+      justify-content:space-between;
+      margin:7px 0;
+      font-size:13px;
+    }
+
+    .checkout-total .final{
+      border-top:1px solid #ddd9e0;
+      padding-top:13px;
+      margin-top:13px;
+      font-size:19px;
+      font-weight:800;
+    }
+
+    .overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(11,9,13,.44);
+      z-index:50;
+      opacity:0;
+      pointer-events:none;
+      transition:.25s;
+    }
+
+    .overlay.show{
+      opacity:1;
+      pointer-events:auto;
+    }
+
+    .toast{
+      position:fixed;
+      left:50%;
+      bottom:28px;
+      transform:translate(-50%,30px);
+      background:#17131c;
+      color:#fff;
+      padding:13px 17px;
+      border-radius:12px;
+      font-size:13px;
+      opacity:0;
+      pointer-events:none;
+      transition:.25s;
+      z-index:90;
+      white-space:nowrap;
+    }
+
+    .toast.show{
+      opacity:1;
+      transform:translate(-50%,0);
+    }
+
+    .mobile-menu{
+      display:none;
+    }
+
+    @media(max-width:980px){
+      nav{display:none}
+      .mobile-menu{display:grid}
+      .hero-grid,
+      .story-grid,
+      .charge-grid,
+      .review-grid,
+      .combo-card{
+        grid-template-columns:1fr;
+      }
+
+      .hero-copy{
+        min-height:auto;
+        padding:46px 34px;
+      }
+
+      .hero-visual{min-height:510px}
+
+      .products{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .product-card.featured{
+        grid-row:auto;
+      }
+
+      .featured .product-image{
+        height:360px;
+      }
+
+      .trust-row{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .footer-grid{
+        grid-template-columns:1.4fr 1fr 1fr;
+      }
+
+      .story-copy{padding-right:0}
+
+      .story-feature{
+        grid-template-columns:1fr;
+      }
+
+      .story-feature img{
+        height:310px;
+      }
+
+      .section-head{
+        align-items:start;
+        flex-direction:column;
+      }
+
+      .shipping-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media(max-width:640px){
+      .topbar{font-size:10px}
+
+      .nav{
+        height:68px;
+        padding:0 16px;
+      }
+
+      .nav-actions .icon-btn:nth-child(1){
+        display:none;
+      }
+
+      .container{padding:0 16px}
+
+      .hero{
+        padding-top:26px;
+      }
+
+      .hero-copy{
+        padding:34px 24px;
+        border-radius:24px;
+      }
+
+      .hero h1{font-size:46px}
+
+      .hero p{font-size:15px}
+
+      .hero-visual{
+        min-height:400px;
+        border-radius:24px;
+      }
+
+      .hero-visual img{
+        object-position:50% 42%;
+      }
+
+      .hero-meta{
+        margin-top:30px;
+        gap:18px;
+      }
+
+      .trust-row,
+      .products,
+      .how-grid{
+        grid-template-columns:1fr;
+      }
+
+      .product-card,
+      .featured .product-image,
+      .product-image{
+        height:auto;
+      }
+
+      .product-image{
+        height:320px!important;
+      }
+
+      .section-head h2{
+        font-size:37px;
+      }
+
+      section{
+        padding:66px 0;
+      }
+
+      .story-feature{
+        padding:12px;
+      }
+
+      .story .story-feature img{
+        height:280px;
+      }
+
+      .compare table{
+        min-width:650px;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .copyright{
+        flex-direction:column;
+      }
+
+      .floating{
+        max-width:205px;
+      }
+
+      .brand{
+        font-size:13px;
+      }
+
+      .combo-card{
+        padding:26px;
+      }
+
+      .payment-grid{
+        grid-template-columns:1fr;
+      }
+
+      .checkout-content{
+        padding:20px;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <div class="topbar">Frete grátis acima de R$ 199 · 7 dias para experimentar</div>
+
+  <div class="topbar">
+    Primeira compra · frete grátis · PIX com 5% OFF
+  </div>
+
   <header>
     <div class="nav">
+
       <a class="brand" href="#top" aria-label="SOKO Energy">
-        <span class="brand-mark">S</span><span>SOKO<small>ENERGY</small></span>
+        <img id="logo" src="assets/logo.png" alt="SOKO Energy" height="50vh">
+        <span>SOKO<small>ENERGY</small></span>
       </a>
+
       <nav>
-        <a href="#colecao">Coleção</a><a href="#tecnologia">Tecnologia</a><a href="#como-funciona">Como funciona</a><a href="#avaliacoes">Avaliações</a>
+        <a href="#colecao">Coleção</a>
+        <a href="#combo">Combo</a>
+        <a href="#tecnologia">Tecnologia</a>
+        <a href="#avaliacoes">Avaliações</a>
       </nav>
+
       <div class="nav-actions">
-        <button class="icon-btn" onclick="showToast('Busca simulada — use os menus da apresentação.')" aria-label="Pesquisar">⌕</button>
-        <button class="icon-btn" onclick="toggleCart(true)" aria-label="Abrir carrinho">🛒<span class="cart-count" id="cartCount">0</span></button>
-        <button class="icon-btn mobile-menu" onclick="showToast('No mobile, navegação por rolagem está ativa.')" aria-label="Menu">☰</button>
+
+        <button
+          class="icon-btn"
+          onclick="showToast('Busca simulada — use os menus da apresentação.')"
+          aria-label="Pesquisar">
+          ⌕
+        </button>
+
+        <button
+          class="icon-btn"
+          onclick="toggleCart(true)"
+          aria-label="Abrir carrinho">
+          🛒
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <button
+          class="icon-btn mobile-menu"
+          onclick="showToast('No mobile, navegação por rolagem está ativa.')"
+          aria-label="Menu">
+          ☰
+        </button>
+
       </div>
     </div>
   </header>
 
+
   <main id="top">
+
+    <!-- HERO -->
     <section class="hero">
       <div class="container hero-grid">
+
         <div class="hero-copy">
-          <div class="eyebrow"><span class="dot"></span> nova geração de proteção móvel</div>
-          <h1>Seu celular.<br><span>Mais inteligente.</span></h1>
-          <p>Capas SOKO que unem design, proteção ativa e energia. Escolha a tecnologia certa para acompanhar o seu ritmo — do primeiro impacto ao fim do dia.</p>
-          <div class="cta-row"><a class="btn btn-primary" href="#colecao">Explorar coleção ↗</a><a class="btn btn-secondary" href="#tecnologia">Conhecer a tecnologia</a></div>
-          <div class="hero-meta"><div><strong>Proteção ativa</strong>Airbag nos 4 cantos</div><div><strong>Energia solar</strong>Powerbanks integrados</div><div><strong>Compatibilidade</strong>Modelos premium</div></div>
+
+          <div class="eyebrow">
+            <span class="dot"></span>
+            nova geração de proteção móvel
+          </div>
+
+          <h1>
+            Seu celular.
+            <br>
+            <span>Mais preparado.</span>
+          </h1>
+
+          <p>
+            Capas SOKO que unem proteção inteligente e energia para
+            acompanhar seu ritmo. Conheça a Protect Air e a Charge Cap.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#colecao">
+              Explorar coleção ↗
+            </a>
+
+            <a class="btn btn-secondary" href="#combo">
+              Ver combo
+            </a>
+          </div>
+
+          <div class="hero-meta">
+
+            <div>
+              <strong>Proteção ativa</strong>
+              Airbag nos 4 cantos
+            </div>
+
+            <div>
+              <strong>Energia integrada</strong>
+              Powerbank com captação solar
+            </div>
+
+            <div>
+              <strong>PIX</strong>
+              5% de desconto
+            </div>
+
+          </div>
+
         </div>
+
+
         <div class="hero-visual">
-          <span class="hero-tag">Mais vendido · <b>Protect Air</b></span>
-          <img src="assets/airbag-story.png" alt="Capa SOKO com mini airbag" />
-          <div class="floating"><strong>Protect Air</strong><p>Quando a queda acontece, os cantos inflam e absorvem o impacto antes de chegar ao aparelho.</p></div>
+
+          <span class="hero-tag">
+            Mais vendida · <b>Protect Air</b>
+          </span>
+
+          <img
+            src="assets/airbag-story.png"
+            alt="Capa SOKO Protect Air"
+          />
+
+          <div class="floating">
+
+            <strong>Protect Air</strong>
+
+            <p>
+              Quando a queda acontece, os cantos inflam e absorvem
+              o impacto antes de chegar ao aparelho.
+            </p>
+
+          </div>
+
         </div>
+
       </div>
     </section>
 
+
+    <!-- BENEFÍCIOS -->
     <div class="container trust">
+
       <div class="trust-row">
-        <div class="trust-card"><div class="trust-icon">✦</div><div><strong>Design premium</strong><span>Acabamento minimalista</span></div></div>
-        <div class="trust-card"><div class="trust-icon">⌁</div><div><strong>Energia solar</strong><span>Capte luz ao longo do dia</span></div></div>
-        <div class="trust-card"><div class="trust-icon">✓</div><div><strong>Compra segura</strong><span>Checkout demonstrativo</span></div></div>
-        <div class="trust-card"><div class="trust-icon">↺</div><div><strong>7 dias</strong><span>Para experimentar</span></div></div>
+
+        <div class="trust-card">
+          <div class="trust-icon">✦</div>
+          <div>
+            <strong>Design premium</strong>
+            <span>Acabamento minimalista</span>
+          </div>
+        </div>
+
+        <div class="trust-card">
+          <div class="trust-icon">⌁</div>
+          <div>
+            <strong>Energia integrada</strong>
+            <span>Powerbank na própria capa</span>
+          </div>
+        </div>
+
+        <div class="trust-card">
+          <div class="trust-icon">✓</div>
+          <div>
+            <strong>Compra segura</strong>
+            <span>Checkout demonstrativo</span>
+          </div>
+        </div>
+
+        <div class="trust-card">
+          <div class="trust-icon">↺</div>
+          <div>
+            <strong>Primeira compra</strong>
+            <span>Frete grátis</span>
+          </div>
+        </div>
+
       </div>
     </div>
 
+
+    <!-- COLEÇÃO -->
     <section id="colecao">
+
       <div class="container">
+
         <div class="section-head">
-          <div><div class="section-kicker">Coleção SOKO</div><h2>Escolha sua camada de proteção.</h2></div>
-          <p>Quatro conceitos para uma mesma ideia: deixar o celular mais preparado para a vida real, sem transformar seu bolso em um laboratório.</p>
+
+          <div>
+            <div class="section-kicker">Coleção SOKO</div>
+            <h2>Duas tecnologias. Uma escolha inteligente.</h2>
+          </div>
+
+          <p>
+            Escolha proteção ativa com a Protect Air ou energia
+            integrada com a Charge Cap.
+          </p>
+
         </div>
+
+
         <div class="products">
+
+          <!-- PROTECT AIR -->
           <article class="product-card featured">
-            <div class="product-image"><img src="assets/airbag-story.png" alt="SOKO Protect Air" /></div>
-            <div class="product-info">
-              <div class="product-top"><div><h3>Protect Air</h3><div class="eyebrow" style="margin-top:7px">Airbag de emergência</div></div><span class="badge">MAIS VENDIDA</span></div>
-              <p>Quatro airbags discretos nos cantos ativam no impacto para criar uma zona extra de proteção.</p>
-              <div class="price">R$ 199,90 <span class="old">R$ 229,90</span></div>
-              <div class="product-actions"><select class="mini-select" id="modelAir"><option>iPhone Pro</option><option>Galaxy Ultra</option></select><button class="btn btn-primary" onclick="addToCart('Protect Air','R$ 199,90','assets/airbag-story.png')">Adicionar</button></div>
+
+            <div class="product-image">
+              <img
+                src="assets/airbag-story.png"
+                alt="SOKO Protect Air"
+              />
             </div>
+
+            <div class="product-info">
+
+              <div class="product-top">
+
+                <div>
+
+                  <h3>Protect Air</h3>
+
+                  <div
+                    class="eyebrow"
+                    style="margin-top:7px">
+                    Airbag de emergência
+                  </div>
+
+                </div>
+
+                <span class="badge">
+                  MAIS VENDIDA
+                </span>
+
+              </div>
+
+              <p>
+                Quatro airbags discretos nos cantos ativam no impacto
+                para criar uma zona extra de proteção.
+              </p>
+
+              <div class="price">
+                R$ 180,00
+              </div>
+
+              <div class="product-actions">
+
+                <select
+                  class="mini-select"
+                  id="modelAir">
+
+                  <option>iPhone Pro</option>
+                  <option>iPhone Pro Max</option>
+                  <option>Galaxy Ultra</option>
+                  <option>Galaxy Plus</option>
+
+                </select>
+
+                <button
+                  class="btn btn-primary"
+                  onclick="addToCart(
+                    'Protect Air',
+                    180,
+                    'assets/airbag-story.png'
+                  )">
+
+                  Adicionar
+
+                </button>
+
+              </div>
+
+            </div>
+
           </article>
+
+
+          <!-- CHARGE CAP -->
           <article class="product-card">
-            <div class="product-image"><img src="assets/powerpack.png" alt="SOKO Solar Pack" /></div>
-            <div class="product-info"><div class="product-top"><h3>Solar Pack</h3><span class="badge">POWERBANK</span></div><p>Powerbank slim integrado para recarregar seu celular sem levar um bloco extra.</p><div class="price">R$ 249,90</div><div class="product-actions"><button class="btn btn-primary" onclick="addToCart('Solar Pack','R$ 249,90','assets/powerpack.png')">Adicionar</button></div></div>
+
+            <div class="product-image">
+              <img
+                src="assets/powerpack.png"
+                alt="SOKO Charge Cap"
+              />
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-top">
+
+                <h3>Charge Cap</h3>
+
+                <span class="badge">
+                  POWERBANK
+                </span>
+
+              </div>
+
+              <p>
+                Capa inteligente com powerbank integrado e sistema
+                de captação de energia solar para acompanhar seu dia.
+              </p>
+
+              <div class="price">
+                R$ 230,00
+              </div>
+
+              <div class="product-actions">
+
+                <select
+                  class="mini-select"
+                  id="modelCharge">
+
+                  <option>iPhone Pro</option>
+                  <option>iPhone Pro Max</option>
+                  <option>Galaxy Ultra</option>
+                  <option>Galaxy Plus</option>
+
+                </select>
+
+                <button
+                  class="btn btn-primary"
+                  onclick="addToCart(
+                    'Charge Cap',
+                    230,
+                    'assets/powerpack.png'
+                  )">
+
+                  Adicionar
+
+                </button>
+
+              </div>
+
+            </div>
+
           </article>
-          <article class="product-card">
-            <div class="product-image"><img src="assets/solar-disc.png" alt="SOKO Solar Disc" /></div>
-            <div class="product-info"><div class="product-top"><h3>Solar Disc</h3><span class="badge">MAGNÉTICA</span></div><p>Módulo solar circular com encaixe magnético e perfil baixo para uso diário.</p><div class="price">R$ 229,90</div><div class="product-actions"><button class="btn btn-primary" onclick="addToCart('Solar Disc','R$ 229,90','assets/solar-disc.png')">Adicionar</button></div></div>
+
+
+          <!-- COMBO CARD -->
+          <article
+            class="product-card"
+            style="background:#f8f4ff;border-color:#ded1f7">
+
+            <div class="product-info">
+
+              <div class="product-top">
+
+                <div>
+                  <h3>Combo SOKO</h3>
+
+                  <div
+                    class="eyebrow"
+                    style="margin-top:7px">
+                    Proteção + energia
+                  </div>
+                </div>
+
+                <span class="badge">
+                  OFERTA
+                </span>
+
+              </div>
+
+              <p>
+                Leve Protect Air + Charge Cap juntos por um preço
+                especial.
+              </p>
+
+              <div class="price">
+                R$ 369,00
+                <span class="old">R$ 410,00</span>
+              </div>
+
+              <div
+                style="
+                  color:#4f8f76;
+                  font-size:12px;
+                  font-weight:800;
+                  margin-top:6px;
+                ">
+                Economize R$ 41,00
+              </div>
+
+              <div class="product-actions">
+
+                <button
+                  class="btn btn-primary"
+                  onclick="addCombo()">
+
+                  Adicionar combo
+
+                </button>
+
+              </div>
+
+            </div>
+
           </article>
-          <article class="product-card">
-            <div class="product-image"><img src="assets/solar-wave.png" alt="SOKO Solar Wave" /></div>
-            <div class="product-info"><div class="product-top"><h3>Solar Wave</h3><span class="badge">SLIM</span></div><p>Formato curvo, luz indicadora e uma estética limpa para quem quer discrição.</p><div class="price">R$ 219,90</div><div class="product-actions"><button class="btn btn-primary" onclick="addToCart('Solar Wave','R$ 219,90','assets/solar-wave.png')">Adicionar</button></div></div>
-          </article>
-          <article class="product-card">
-            <div class="product-image"><img src="assets/solar-rail.png" alt="SOKO Solar Rail" /></div>
-            <div class="product-info"><div class="product-top"><h3>Solar Rail</h3><span class="badge">CHARGE LED</span></div><p>Faixa de energia com indicadores de carga para visualizar o estado do módulo.</p><div class="price">R$ 239,90</div><div class="product-actions"><button class="btn btn-primary" onclick="addToCart('Solar Rail','R$ 239,90','assets/solar-rail.png')">Adicionar</button></div></div>
-          </article>
+
         </div>
+
       </div>
+
     </section>
 
-    <section id="tecnologia" class="story">
+
+    <!-- COMBO -->
+    <section
+      id="combo"
+      class="combo-section">
+
+      <div class="container">
+
+        <div class="combo-card">
+
+          <div>
+
+            <div class="combo-kicker">
+              Oferta especial
+            </div>
+
+            <h2>
+              Proteção e energia.
+              <br>
+              Juntas.
+            </h2>
+
+            <p>
+              Combine as duas tecnologias SOKO em um único pedido.
+              A Protect Air protege contra impactos, enquanto a
+              Charge Cap mantém uma reserva de energia integrada.
+            </p>
+
+            <div class="combo-products">
+
+              <div class="combo-chip">
+                <strong>Protect Air</strong>
+                <span>R$ 180,00</span>
+              </div>
+
+              <div class="combo-chip">
+                <strong>Charge Cap</strong>
+                <span>R$ 230,00</span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="combo-price-box">
+
+            <div class="combo-old">
+              Total original: R$ 410,00
+            </div>
+
+            <div class="combo-price">
+              R$ 369,00
+            </div>
+
+            <div class="combo-pix">
+              R$ 350,55 no PIX
+            </div>
+
+            <span class="combo-save">
+              ECONOMIZE R$ 59,45 NO PIX
+            </span>
+
+            <button
+              class="btn btn-primary"
+              style="
+                width:100%;
+                margin-top:20px;
+                background:#fff;
+                color:#15131b;
+              "
+              onclick="addCombo()">
+
+              Comprar combo →
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- TECNOLOGIA PROTECT AIR -->
+    <section
+      id="tecnologia"
+      class="story">
+
       <div class="container story-grid">
-        <div class="story-copy"><div class="section-kicker">Proteção que reage</div><h2>A queda dura um instante. A proteção, não.</h2><p>O Protect Air foi pensado como um pequeno sistema de segurança. Sensores detectam a mudança brusca de movimento e os quatro módulos de ar criam um colchão entre o aparelho e a superfície.</p><a class="btn btn-secondary" style="margin-top:16px;background:transparent;border-color:#3a3442;color:#fff" href="#como-funciona">Ver como funciona ↘</a></div>
-        <div class="story-feature"><img src="assets/airbag-story.png" alt="Detalhes da tecnologia Protect Air"/><div class="story-stats"><div class="stat"><b>4</b><span>cantos infláveis para distribuir o impacto</span></div><div class="stat"><b>360°</b><span>área de proteção ao redor do aparelho</span></div><div class="stat"><b>01</b><span>sistema compacto, integrado e discreto</span></div></div></div>
-      </div>
-    </section>
 
-    <section class="solar">
-      <div class="container">
-        <div class="section-head"><div><div class="section-kicker">Energia em movimento</div><h2>Luz vira carga.</h2></div><p>Os modelos Solar foram desenhados para manter uma reserva de energia no próprio case, com indicador visual e foco no uso cotidiano.</p></div>
-        <div class="solar-grid">
-          <article class="feature-card"><div class="feature-media"><img src="assets/solar-disc.png" alt="Capa Solar Disc" /></div><div class="feature-body"><h3>Powerbank que cabe na capa.</h3><p>Um módulo traseiro integrado evita o volume de carregar powerbank + cabo + capa ao mesmo tempo. A ideia é simplificar.</p><div class="pill-row"><span class="pill">Powerbank integrado</span><span class="pill">Indicador de carga</span><span class="pill">Perfil inteligente</span></div></div></article>
-          <article class="feature-card"><div class="feature-media"><img src="assets/solar-rail.png" alt="Capa Solar Rail" /></div><div class="feature-body"><h3>Carregue enquanto segue.</h3><p>As superfícies solares capturam luz ambiente ao longo do dia. Quando for preciso, o módulo libera a energia armazenada para o celular.</p><div class="pill-row"><span class="pill">Captação solar</span><span class="pill">USB-C</span><span class="pill">LED de status</span></div></div></article>
+        <div class="story-copy">
+
+          <div class="section-kicker">
+            Proteção que reage
+          </div>
+
+          <h2>
+            A queda dura um instante.
+            A proteção, não.
+          </h2>
+
+          <p>
+            O Protect Air foi pensado como um pequeno sistema de
+            segurança. Sensores detectam uma mudança brusca de
+            movimento e os quatro módulos de ar criam uma zona
+            extra de proteção entre o aparelho e a superfície.
+          </p>
+
+          <a
+            class="btn btn-secondary"
+            style="
+              margin-top:16px;
+              background:transparent;
+              border-color:#3a3442;
+              color:#fff
+            "
+            href="#como-funciona">
+
+            Ver como funciona ↘
+
+          </a>
+
         </div>
+
+
+        <div class="story-feature">
+
+          <img
+            src="assets/airbag-story.png"
+            alt="Detalhes da tecnologia Protect Air"
+          />
+
+          <div class="story-stats">
+
+            <div class="stat">
+              <b>4</b>
+              <span>
+                cantos infláveis para distribuir o impacto
+              </span>
+            </div>
+
+            <div class="stat">
+              <b>360°</b>
+              <span>
+                área de proteção ao redor do aparelho
+              </span>
+            </div>
+
+            <div class="stat">
+              <b>01</b>
+              <span>
+                sistema compacto, integrado e discreto
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
+
     </section>
 
-    <section id="como-funciona" class="how">
+
+    <!-- CHARGE CAP -->
+    <section class="charge">
+
       <div class="container">
-        <div class="section-head"><div><div class="section-kicker">A experiência SOKO</div><h2>Feita para parecer simples.</h2></div><p>Da escolha da capa ao pós-compra, cada etapa foi pensada para uma apresentação de produto premium.</p></div>
-        <div class="how-grid"><div class="how-card"><div class="num">01</div><h3>Escolha a tecnologia</h3><p>Airbag para proteção ativa ou Solar para ter energia extra no mesmo objeto que já acompanha seu celular.</p></div><div class="how-card"><div class="num">02</div><h3>Personalize o modelo</h3><p>Selecione seu aparelho e veja a opção compatível antes de adicionar ao carrinho.</p></div><div class="how-card"><div class="num">03</div><h3>Leve para o cotidiano</h3><p>O sistema fica discreto no uso diário, com materiais resistentes e detalhes que mostram a tecnologia.</p></div></div>
+
+        <div class="section-head">
+
+          <div>
+            <div class="section-kicker">
+              Energia em movimento
+            </div>
+
+            <h2>
+              Sua energia sempre por perto.
+            </h2>
+          </div>
+
+          <p>
+            A Charge Cap integra uma reserva de energia à própria
+            capa, combinando praticidade, design e captação solar.
+          </p>
+
+        </div>
+
+
+        <div class="charge-grid">
+
+          <article class="feature-card">
+
+            <div class="feature-media">
+              <img
+                src="assets/powerpack.png"
+                alt="SOKO Charge Cap"
+              />
+            </div>
+
+            <div class="feature-body">
+
+              <h3>
+                Powerbank que cabe na capa.
+              </h3>
+
+              <p>
+                Um módulo traseiro integrado evita o volume de
+                carregar powerbank, cabo e capa ao mesmo tempo.
+              </p>
+
+              <div class="pill-row">
+                <span class="pill">
+                  Powerbank integrado
+                </span>
+
+                <span class="pill">
+                  Captação solar
+                </span>
+
+                <span class="pill">
+                  Indicador de carga
+                </span>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="feature-card">
+
+            <div class="feature-media">
+              <img
+                src="assets/solar-rail.png"
+                alt="Tecnologia solar SOKO"
+              />
+            </div>
+
+            <div class="feature-body">
+
+              <h3>
+                Carregue enquanto segue.
+              </h3>
+
+              <p>
+                As superfícies solares capturam luz ambiente ao
+                longo do dia. Quando for preciso, o módulo libera
+                a energia armazenada para o celular.
+              </p>
+
+              <div class="pill-row">
+
+                <span class="pill">
+                  Energia solar
+                </span>
+
+                <span class="pill">
+                  USB-C
+                </span>
+
+                <span class="pill">
+                  LED de status
+                </span>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
       </div>
+
     </section>
 
+
+    <!-- COMO FUNCIONA -->
+    <section
+      id="como-funciona"
+      class="how">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+            <div class="section-kicker">
+              A experiência SOKO
+            </div>
+
+            <h2>
+              Feita para parecer simples.
+            </h2>
+          </div>
+
+          <p>
+            Da escolha da capa ao pós-compra, cada etapa foi
+            pensada para uma experiência premium.
+          </p>
+
+        </div>
+
+
+        <div class="how-grid">
+
+          <div class="how-card">
+            <div class="num">01</div>
+
+            <h3>
+              Escolha a tecnologia
+            </h3>
+
+            <p>
+              Airbag para proteção ativa ou Charge Cap para ter
+              energia extra integrada à capa.
+            </p>
+          </div>
+
+
+          <div class="how-card">
+            <div class="num">02</div>
+
+            <h3>
+              Personalize o modelo
+            </h3>
+
+            <p>
+              Selecione seu aparelho e veja a opção compatível
+              antes de adicionar ao carrinho.
+            </p>
+          </div>
+
+
+          <div class="how-card">
+            <div class="num">03</div>
+
+            <h3>
+              Receba em casa
+            </h3>
+
+            <p>
+              Na primeira compra, o frete é grátis. Para demais
+              pedidos, escolha a modalidade Loggi disponível.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ENVIO -->
+    <section class="shipping">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+            <div class="section-kicker">
+              Entrega SOKO
+            </div>
+
+            <h2>
+              Receba onde estiver.
+            </h2>
+          </div>
+
+          <p>
+            Na primeira compra o frete é grátis. Confira também
+            as opções de envio expresso.
+          </p>
+
+        </div>
+
+
+        <div class="shipping-grid">
+
+          <div class="shipping-card">
+
+            <div class="shipping-icon">
+              ✦
+            </div>
+
+            <h3>
+              Primeira compra
+            </h3>
+
+            <p>
+              Frete grátis para o seu primeiro pedido SOKO.
+            </p>
+
+            <div class="shipping-free">
+              FRETE GRÁTIS
+            </div>
+
+          </div>
+
+
+          <div class="shipping-card">
+
+            <div class="shipping-icon">
+              →
+            </div>
+
+            <h3>
+              Loggi Expresso
+            </h3>
+
+            <p>
+              Grande São Paulo
+              <br>
+              Prazo: 7 dias úteis
+            </p>
+
+            <div class="shipping-price">
+              R$ 20,00
+            </div>
+
+          </div>
+
+
+          <div class="shipping-card">
+
+            <div class="shipping-icon">
+              ↗
+            </div>
+
+            <h3>
+              Loggi Expresso
+            </h3>
+
+            <p>
+              Interior de São Paulo
+              <br>
+              Prazo: 10 dias úteis
+            </p>
+
+            <div class="shipping-price">
+              R$ 35,00
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- COMPARAÇÃO -->
     <section class="compare">
+
       <div class="container">
-        <div class="section-head"><div><div class="section-kicker">Compare</div><h2>Qual SOKO combina com você?</h2></div><p>Uma tabela curta para ajudar o visitante a decidir em segundos.</p></div>
-        <div class="compare-wrap"><table><thead><tr><th>Recurso</th><th>Protect Air</th><th>Solar Pack</th><th>Solar Disc</th><th>Solar Rail</th></tr></thead><tbody><tr><td>Proteção nos cantos</td><td class="check">✓</td><td class="muted-cell">—</td><td class="muted-cell">—</td><td class="muted-cell">—</td></tr><tr><td>Powerbank integrado</td><td class="muted-cell">—</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr><tr><td>Captação solar</td><td class="muted-cell">—</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr><tr><td>Indicador LED</td><td class="muted-cell">—</td><td class="muted-cell">—</td><td class="check">✓</td><td class="check">✓</td></tr><tr><td>Uso sugerido</td><td>Proteção máxima</td><td>Energia diária</td><td>MagSafe + energia</td><td>Energia + visual tech</td></tr></tbody></table></div>
+
+        <div class="section-head">
+
+          <div>
+            <div class="section-kicker">
+              Compare
+            </div>
+
+            <h2>
+              Qual SOKO combina com você?
+            </h2>
+          </div>
+
+          <p>
+            Uma comparação rápida para decidir em segundos.
+          </p>
+
+        </div>
+
+
+        <div class="compare-wrap">
+
+          <table>
+
+            <thead>
+
+              <tr>
+                <th>Recurso</th>
+                <th>Protect Air</th>
+                <th>Charge Cap</th>
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>Proteção nos cantos</td>
+                <td class="check">✓</td>
+                <td class="muted-cell">—</td>
+              </tr>
+
+              <tr>
+                <td>Powerbank integrado</td>
+                <td class="muted-cell">—</td>
+                <td class="check">✓</td>
+              </tr>
+
+              <tr>
+                <td>Captação solar</td>
+                <td class="muted-cell">—</td>
+                <td class="check">✓</td>
+              </tr>
+
+              <tr>
+                <td>Preço</td>
+                <td>R$ 180,00</td>
+                <td>R$ 230,00</td>
+              </tr>
+
+              <tr>
+                <td>Uso sugerido</td>
+                <td>Proteção máxima</td>
+                <td>Energia diária</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
       </div>
+
     </section>
 
-    <section id="avaliacoes" class="reviews">
+
+    <!-- AVALIAÇÕES -->
+    <section
+      id="avaliacoes"
+      class="reviews">
+
       <div class="container">
-        <div class="section-head"><div><div class="section-kicker">Quem já escolheu</div><h2>“Parece produto de próxima geração.”</h2></div><p>Avaliações demonstrativas para compor a experiência visual da apresentação.</p></div>
-        <div class="review-grid"><div class="review-main"><div class="stars">★★★★★</div><div class="quote">“A Protect Air é o tipo de produto que você só percebe que precisava quando vê funcionando. O visual também ficou muito acima do esperado.”</div><div class="reviewer"><div class="avatar">M</div><div><strong>Marina Costa</strong><small>Compradora verificada · São Paulo</small></div></div></div><div class="review-stack"><div class="mini-review"><div class="stars">★★★★★</div><p>“O módulo solar integrado deixou meu kit muito mais limpo. Carrego sem precisar lembrar de trazer outro acessório.”</p><strong>Rafael · Curitiba</strong></div><div class="mini-review"><div class="stars">★★★★★</div><p>“A interface de compra é simples e o produto tem uma cara bem premium.”</p><strong>Luiza · Rio de Janeiro</strong></div></div></div>
+
+        <div class="section-head">
+
+          <div>
+            <div class="section-kicker">
+              Quem já escolheu
+            </div>
+
+            <h2>
+              “Parece produto de próxima geração.”
+            </h2>
+          </div>
+
+          <p>
+            Avaliações demonstrativas para compor a experiência
+            visual da apresentação.
+          </p>
+
+        </div>
+
+
+        <div class="review-grid">
+
+          <div class="review-main">
+
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <div class="quote">
+              “A Protect Air é o tipo de produto que você só
+              percebe que precisava quando vê funcionando.”
+            </div>
+
+            <div class="reviewer">
+
+              <div class="avatar">
+                M
+              </div>
+
+              <div>
+                <strong>Marina Costa</strong>
+                <small>
+                  Compradora verificada · São Paulo
+                </small>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="review-stack">
+
+            <div class="mini-review">
+
+              <div class="stars">
+                ★★★★★
+              </div>
+
+              <p>
+                “O módulo solar integrado deixou meu kit muito
+                mais limpo. Não preciso carregar outro acessório.”
+              </p>
+
+              <strong>
+                Rafael · Curitiba
+              </strong>
+
+            </div>
+
+
+            <div class="mini-review">
+
+              <div class="stars">
+                ★★★★★
+              </div>
+
+              <p>
+                “A interface de compra é simples e o produto
+                tem uma cara bem premium.”
+              </p>
+
+              <strong>
+                Luiza · Rio de Janeiro
+              </strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
+
     </section>
+
   </main>
 
+
+  <!-- FOOTER -->
   <footer>
-    <div class="container"><div class="footer-grid"><div><div class="footer-brand">SOKO <span style="color:#9d63ff">ENERGY</span></div><p class="footer-copy">Proteção inteligente, energia em movimento e design pensado para acompanhar a vida real.</p></div><div class="footer-col"><h4>Comprar</h4><a href="#colecao">Coleção</a><a href="#colecao">Protect Air</a><a href="#colecao">Solar</a></div><div class="footer-col"><h4>Marca</h4><a href="#tecnologia">Tecnologia</a><a href="#avaliacoes">Avaliações</a><a href="#como-funciona">Como funciona</a></div><div class="footer-col"><h4>Suporte</h4><a href="#">Envio</a><a href="#">Trocas</a><a href="#">Contato</a></div></div><div class="copyright"><span>© 2026 SOKO Energy · Experiência demonstrativa</span><span>Privacidade · Termos · Cookies</span></div></div>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+
+          <div class="footer-brand">
+            SOKO
+            <span style="color:#9d63ff">
+              ENERGY
+            </span>
+          </div>
+
+          <p class="footer-copy">
+            Proteção inteligente, energia em movimento e design
+            pensado para acompanhar a vida real.
+          </p>
+
+        </div>
+
+
+        <div class="footer-col">
+
+          <h4>Comprar</h4>
+
+          <a href="#colecao">
+            Coleção
+          </a>
+
+          <a href="#colecao">
+            Protect Air
+          </a>
+
+          <a href="#colecao">
+            Charge Cap
+          </a>
+
+          <a href="#combo">
+            Combo
+          </a>
+
+        </div>
+
+
+        <div class="footer-col">
+
+          <h4>Marca</h4>
+
+          <a href="#tecnologia">
+            Tecnologia
+          </a>
+
+          <a href="#avaliacoes">
+            Avaliações
+          </a>
+
+          <a href="#como-funciona">
+            Como funciona
+          </a>
+
+        </div>
+
+
+        <div class="footer-col">
+
+          <h4>Suporte</h4>
+
+          <a href="#shipping">
+            Envio
+          </a>
+
+          <a href="#">
+            Trocas
+          </a>
+
+          <a href="#">
+            Contato
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="copyright">
+
+        <span>
+          © 2026 SOKO Energy · Experiência demonstrativa
+        </span>
+
+        <span>
+          Privacidade · Termos · Cookies
+        </span>
+
+      </div>
+
+    </div>
+
   </footer>
 
-  <div class="overlay" id="overlay" onclick="toggleCart(false)"></div>
-  <aside class="cart-drawer" id="cartDrawer" aria-label="Carrinho">
-    <div class="drawer-head"><h3>Seu carrinho</h3><button class="icon-btn" onclick="toggleCart(false)" aria-label="Fechar carrinho">×</button></div>
-    <div class="drawer-body" id="cartBody"><div style="color:#7a7480;font-size:13px;padding:30px 0;text-align:center">Seu carrinho está vazio.<br/>Adicione um produto para simular o checkout.</div></div>
-    <div class="drawer-footer"><div class="total-row"><span>Total</span><span id="cartTotal">R$ 0,00</span></div><button class="btn btn-primary" style="width:100%" onclick="checkout()">Ir para checkout →</button></div>
+
+  <!-- OVERLAY -->
+  <div
+    class="overlay"
+    id="overlay"
+    onclick="toggleCart(false)">
+  </div>
+
+
+  <!-- CARRINHO -->
+  <aside
+    class="cart-drawer"
+    id="cartDrawer"
+    aria-label="Carrinho">
+
+    <div class="drawer-head">
+
+      <h3>
+        Seu carrinho
+      </h3>
+
+      <button
+        class="icon-btn"
+        onclick="toggleCart(false)"
+        aria-label="Fechar carrinho">
+
+        ×
+
+      </button>
+
+    </div>
+
+
+    <div
+      class="drawer-body"
+      id="cartBody">
+
+      <div
+        style="
+          color:#7a7480;
+          font-size:13px;
+          padding:30px 0;
+          text-align:center
+        ">
+
+        Seu carrinho está vazio.
+        <br>
+        Adicione um produto para simular o checkout.
+
+      </div>
+
+    </div>
+
+
+    <div class="drawer-footer">
+
+      <div class="subtotal-row">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">
+          R$ 0,00
+        </span>
+      </div>
+
+      <div class="discount-row">
+        <span>Desconto PIX</span>
+        <span id="cartPixDiscount">
+          - R$ 0,00
+        </span>
+      </div>
+
+      <div class="pix-note">
+        💜 Pagando via PIX você recebe 5% de desconto.
+        No combo, o valor fica em R$ 350,55.
+      </div>
+
+      <div class="total-row">
+        <span>Total</span>
+        <span id="cartTotal">
+          R$ 0,00
+        </span>
+      </div>
+
+      <button
+        class="btn btn-primary"
+        style="width:100%"
+        onclick="checkout()">
+
+        Ir para checkout →
+
+      </button>
+
+    </div>
+
   </aside>
-  <div class="toast" id="toast"></div>
+
+
+  <!-- CHECKOUT -->
+  <div
+    class="checkout-panel"
+    id="checkoutPanel">
+
+    <div class="checkout-box">
+
+      <div class="checkout-head">
+
+        <h2>
+          Finalizar pedido
+        </h2>
+
+        <button
+          class="icon-btn"
+          style="
+            background:transparent;
+            border-color:#39333f;
+            color:#fff;
+          "
+          onclick="closeCheckout()">
+
+          ×
+
+        </button>
+
+      </div>
+
+
+      <div class="checkout-content">
+
+        <!-- PAGAMENTO -->
+        <div class="checkout-section">
+
+          <h3>
+            Forma de pagamento
+          </h3>
+
+          <div class="payment-grid">
+
+            <button
+              class="payment-option active"
+              data-payment="pix"
+              onclick="selectPayment('pix',this)">
+
+              PIX
+
+              <span>
+                5% de desconto
+              </span>
+
+            </button>
+
+
+            <button
+              class="payment-option"
+              data-payment="card"
+              onclick="selectPayment('card',this)">
+
+              Cartão
+
+              <span>
+                até 5x · 3x sem juros
+              </span>
+
+            </button>
+
+
+            <button
+              class="payment-option"
+              data-payment="cash"
+              onclick="selectPayment('cash',this)">
+
+              Dinheiro
+
+              <span>
+                disponível
+              </span>
+
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- FRETE -->
+        <div class="checkout-section">
+
+          <h3>
+            Entrega
+          </h3>
+
+
+          <div
+            class="shipping-option active"
+            onclick="selectShipping('first',this)">
+
+            <div>
+
+              <strong>
+                Primeira compra
+              </strong>
+
+              <small>
+                Frete grátis
+              </small>
+
+            </div>
+
+            <b>
+              GRÁTIS
+            </b>
+
+          </div>
+
+
+          <div
+            class="shipping-option"
+            onclick="selectShipping('sp',this)">
+
+            <div>
+
+              <strong>
+                Loggi Expresso — Grande São Paulo
+              </strong>
+
+              <small>
+                7 dias úteis
+              </small>
+
+            </div>
+
+            <b>
+              R$ 20,00
+            </b>
+
+          </div>
+
+
+          <div
+            class="shipping-option"
+            onclick="selectShipping('interior',this)">
+
+            <div>
+
+              <strong>
+                Loggi Expresso — Interior de São Paulo
+              </strong>
+
+              <small>
+                10 dias úteis
+              </small>
+
+            </div>
+
+            <b>
+              R$ 35,00
+            </b>
+
+          </div>
+
+        </div>
+
+
+        <!-- RESUMO -->
+        <div class="checkout-section">
+
+          <h3>
+            Resumo do pedido
+          </h3>
+
+          <div class="checkout-total">
+
+            <div>
+              <span>Produtos</span>
+              <span id="checkoutProducts">
+                R$ 0,00
+              </span>
+            </div>
+
+            <div>
+              <span>Frete</span>
+              <span id="checkoutShipping">
+                Grátis
+              </span>
+            </div>
+
+            <div
+              id="checkoutDiscountRow"
+              style="color:#4f8f76">
+
+              <span>Desconto PIX</span>
+              <span id="checkoutDiscount">
+                - R$ 0,00
+              </span>
+
+            </div>
+
+            <div class="final">
+
+              <span>
+                Total
+              </span>
+
+              <span id="checkoutTotal">
+                R$ 0,00
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <button
+            class="btn btn-primary"
+            style="width:100%"
+            onclick="finishOrder()">
+
+            Confirmar pedido →
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- TOAST -->
+  <div
+    class="toast"
+    id="toast">
+  </div>
+
 
   <script>
-    const state={cart:[]};
-    const moneyMap={'R$ 199,90':199.9,'R$ 249,90':249.9,'R$ 229,90':229.9,'R$ 219,90':219.9,'R$ 239,90':239.9};
-    function addToCart(name,price,img){state.cart.push({name,price,img});renderCart();showToast(name+' adicionado ao carrinho');}
-    function changeQty(i,d){if(!state.cart[i])return; if(d>0){state.cart.push({...state.cart[i]});}else{state.cart.splice(i,1)} renderCart()}
-    function renderCart(){document.getElementById('cartCount').textContent=state.cart.length; const body=document.getElementById('cartBody'); if(!state.cart.length){body.innerHTML='<div style="color:#7a7480;font-size:13px;padding:30px 0;text-align:center">Seu carrinho está vazio.<br/>Adicione um produto para simular o checkout.</div>';document.getElementById('cartTotal').textContent='R$ 0,00';return;} body.innerHTML=state.cart.map((p,i)=>`<div class="cart-item"><img src="${p.img}" alt=""><div><strong>${p.name}</strong><span>${p.price}</span><div class="qty"><button onclick="changeQty(${i},-1)">−</button><span>1 un.</span><button onclick="changeQty(${i},1)">+</button></div></div><button onclick="state.cart.splice(${i},1);renderCart()" style="background:none;color:#8b8590;font-size:18px">×</button></div>`).join(''); const total=state.cart.reduce((s,p)=>s+(moneyMap[p.price]||0),0);document.getElementById('cartTotal').textContent=total.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});}
-    function toggleCart(open){document.getElementById('cartDrawer').classList.toggle('open',open);document.getElementById('overlay').classList.toggle('show',open);}
-    function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(window.tt);window.tt=setTimeout(()=>t.classList.remove('show'),2200)}
-    function checkout(){showToast(state.cart.length?'Checkout demonstrativo aberto.':'Adicione um produto primeiro.'); if(state.cart.length) setTimeout(()=>toggleCart(false),700)}
+
+    const state = {
+      cart: [],
+      payment: 'pix',
+      shipping: 'first'
+    };
+
+
+    const SHIPPING = {
+      first: 0,
+      sp: 20,
+      interior: 35
+    };
+
+
+    function formatMoney(value){
+
+      return value.toLocaleString(
+        'pt-BR',
+        {
+          style:'currency',
+          currency:'BRL'
+        }
+      );
+
+    }
+
+
+    function addToCart(name,price,img){
+
+      state.cart.push({
+        name,
+        price,
+        img
+      });
+
+      renderCart();
+
+      showToast(
+        name + ' adicionado ao carrinho'
+      );
+
+    }
+
+
+    function addCombo(){
+
+      state.cart.push({
+        name:'Protect Air',
+        price:180,
+        img:'assets/airbag-story.png'
+      });
+
+      state.cart.push({
+        name:'Charge Cap',
+        price:230,
+        img:'assets/powerpack.png'
+      });
+
+      renderCart();
+
+      showToast(
+        'Combo SOKO adicionado ao carrinho'
+      );
+
+      toggleCart(true);
+
+    }
+
+
+    function changeQty(i,d){
+
+      if(!state.cart[i]) return;
+
+      if(d > 0){
+
+        state.cart.push({
+          ...state.cart[i]
+        });
+
+      }else{
+
+        state.cart.splice(i,1);
+
+      }
+
+      renderCart();
+
+    }
+
+
+    function removeItem(i){
+
+      state.cart.splice(i,1);
+
+      renderCart();
+
+    }
+
+
+    function isCombo(){
+
+      const names = state.cart.map(
+        item => item.name
+      );
+
+      return (
+        names.includes('Protect Air') &&
+        names.includes('Charge Cap')
+      );
+
+    }
+
+
+    function getSubtotal(){
+
+      return state.cart.reduce(
+        (sum,item) => sum + item.price,
+        0
+      );
+
+    }
+
+
+    function getPixDiscount(){
+
+      const subtotal = getSubtotal();
+
+      if(state.payment !== 'pix'){
+        return 0;
+      }
+
+      return subtotal * 0.05;
+
+    }
+
+
+    function getTotal(){
+
+      return (
+        getSubtotal()
+        + SHIPPING[state.shipping]
+        - getPixDiscount()
+      );
+
+    }
+
+
+    function renderCart(){
+
+      document.getElementById(
+        'cartCount'
+      ).textContent = state.cart.length;
+
+
+      const body =
+        document.getElementById('cartBody');
+
+
+      if(!state.cart.length){
+
+        body.innerHTML = `
+          <div style="
+            color:#7a7480;
+            font-size:13px;
+            padding:30px 0;
+            text-align:center
+          ">
+            Seu carrinho está vazio.
+            <br>
+            Adicione um produto para simular o checkout.
+          </div>
+        `;
+
+        document.getElementById(
+          'cartSubtotal'
+        ).textContent = 'R$ 0,00';
+
+        document.getElementById(
+          'cartPixDiscount'
+        ).textContent = '- R$ 0,00';
+
+        document.getElementById(
+          'cartTotal'
+        ).textContent = 'R$ 0,00';
+
+        return;
+
+      }
+
+
+      body.innerHTML =
+        state.cart.map((p,i) => `
+
+          <div class="cart-item">
+
+            <img
+              src="${p.img}"
+              alt="${p.name}"
+            >
+
+            <div>
+
+              <strong>
+                ${p.name}
+              </strong>
+
+              <span>
+                ${formatMoney(p.price)}
+              </span>
+
+              <div class="qty">
+
+                <button
+                  onclick="changeQty(${i},-1)">
+                  −
+                </button>
+
+                <span>
+                  1 un.
+                </span>
+
+                <button
+                  onclick="changeQty(${i},1)">
+                  +
+                </button>
+
+              </div>
+
+            </div>
+
+            <button
+              onclick="removeItem(${i})"
+              style="
+                background:none;
+                color:#8b8590;
+                font-size:18px
+              ">
+
+              ×
+
+            </button>
+
+          </div>
+
+        `).join('');
+
+
+      document.getElementById(
+        'cartSubtotal'
+      ).textContent =
+        formatMoney(getSubtotal());
+
+
+      document.getElementById(
+        'cartPixDiscount'
+      ).textContent =
+        '- ' + formatMoney(getPixDiscount());
+
+
+      document.getElementById(
+        'cartTotal'
+      ).textContent =
+        formatMoney(getTotal());
+
+    }
+
+
+    function toggleCart(open){
+
+      document.getElementById(
+        'cartDrawer'
+      ).classList.toggle(
+        'open',
+        open
+      );
+
+      document.getElementById(
+        'overlay'
+      ).classList.toggle(
+        'show',
+        open
+      );
+
+    }
+
+
+    function checkout(){
+
+      if(!state.cart.length){
+
+        showToast(
+          'Adicione um produto primeiro.'
+        );
+
+        return;
+
+      }
+
+      toggleCart(false);
+
+      document.getElementById(
+        'checkoutPanel'
+      ).classList.add('show');
+
+      updateCheckout();
+
+    }
+
+
+    function closeCheckout(){
+
+      document.getElementById(
+        'checkoutPanel'
+      ).classList.remove('show');
+
+    }
+
+
+    function selectPayment(payment,element){
+
+      state.payment = payment;
+
+      document
+        .querySelectorAll('.payment-option')
+        .forEach(
+          el => el.classList.remove('active')
+        );
+
+      element.classList.add('active');
+
+      updateCheckout();
+
+    }
+
+
+    function selectShipping(shipping,element){
+
+      state.shipping = shipping;
+
+      document
+        .querySelectorAll('.shipping-option')
+        .forEach(
+          el => el.classList.remove('active')
+        );
+
+      element.classList.add('active');
+
+      updateCheckout();
+
+    }
+
+
+    function updateCheckout(){
+
+      const subtotal = getSubtotal();
+
+      const discount = getPixDiscount();
+
+      const shipping =
+        SHIPPING[state.shipping];
+
+      const total =
+        subtotal +
+        shipping -
+        discount;
+
+
+      document.getElementById(
+        'checkoutProducts'
+      ).textContent =
+        formatMoney(subtotal);
+
+
+      document.getElementById(
+        'checkoutShipping'
+      ).textContent =
+        shipping === 0
+          ? 'Grátis'
+          : formatMoney(shipping);
+
+
+      document.getElementById(
+        'checkoutDiscount'
+      ).textContent =
+        '- ' + formatMoney(discount);
+
+
+      document.getElementById(
+        'checkoutDiscountRow'
+      ).style.display =
+        state.payment === 'pix'
+          ? 'flex'
+          : 'none';
+
+
+      document.getElementById(
+        'checkoutTotal'
+      ).textContent =
+        formatMoney(total);
+
+    }
+
+
+    function finishOrder(){
+
+      if(!state.cart.length){
+
+        showToast(
+          'Seu carrinho está vazio.'
+        );
+
+        return;
+
+      }
+
+
+      let paymentText =
+        state.payment === 'pix'
+          ? 'PIX com 5% de desconto'
+          : state.payment === 'card'
+            ? 'cartão em até 5x (3x sem juros)'
+            : 'dinheiro';
+
+
+      showToast(
+        'Pedido demonstrativo confirmado · ' +
+        paymentText
+      );
+
+
+      setTimeout(() => {
+
+        closeCheckout();
+
+      },1800);
+
+    }
+
+
+    function showToast(msg){
+
+      const t =
+        document.getElementById('toast');
+
+      t.textContent = msg;
+
+      t.classList.add('show');
+
+      clearTimeout(window.tt);
+
+      window.tt =
+        setTimeout(
+          () => t.classList.remove('show'),
+          2600
+        );
+
+    }
+
+
+    renderCart();
+
   </script>
+
 </body>
 </html>
